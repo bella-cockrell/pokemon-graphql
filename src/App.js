@@ -3,10 +3,15 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 
 function App() {
+    const client = new ApolloClient({
+        uri: 'https://graphql-pokemon2.vercel.app'
+    })
   return (
-    <div className="App">
-
-    </div>
+    <ApolloProvider client={client}>
+        <main>
+            <p>I am a Pokémon!</p>
+        </main>
+    </ApolloProvider>
   );
 }
 
